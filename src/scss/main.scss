@@ -1,0 +1,318 @@
+// FONTS
+@font-face {
+  font-family: GT Super;
+  src: url('../../assets/webfonts/GT-Super-Display-Light.woff2') format('woff2'),
+       url('../../assets/webfonts/GT-Super-Display-Light.woff') format('woff');
+}
+@font-face {
+  font-family: GT Super;
+  src: url('../../assets/webfonts/GT-Super-Display-Light-Italic.woff2') format('woff2'),
+       url('../../assets/webfonts/GT-Super-Display-Light-Italic.woff') format('woff');
+       font-style: italic;
+}
+
+// VARIABLES
+$background-color: #f7f7f2;
+$text-color: #000000;
+$phone: 600px;
+$tablet: 979px;
+$desktop: 1350px;
+
+
+// BASIC STYLES
+html {
+  height: 100vh;
+}
+body {
+  background-color: $background-color;
+  height: 100%;
+}
+.container {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  flex-flow: column;
+  min-height: 100%;
+  overflow: auto;
+}
+p, a {
+  font-family: GT Super;
+  font-size: 2em;
+  color: $text-color;
+  text-decoration: none;
+}
+
+// WORK PAGE
+.nav {
+  padding: 40px 80px 0px 80px;
+  @media screen and (max-width: $tablet) {
+    font-size: 0.75em;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  @media screen and (max-width: $phone) {
+    font-size: 0.65em;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+  }
+  * {
+    display: inline;
+  }
+  .initials:hover, a:hover {
+    font-style: italic;
+    cursor: pointer;
+    opacity: 0.2;
+  }
+  .moblinks {
+    float: right;
+    @media screen and (min-width: 601px) {
+      display: none !important;
+    }
+  }
+  .links {
+    float: right;
+  }
+  .moblogo {
+    display: inline-block;
+    height: 1em;
+    width: auto;
+    padding-left: 15px;
+  }
+}
+hr {
+  display: block;
+  border-style: inset;
+  border-width: 1px;
+  margin-left: 70px;
+  margin-right: 70px;
+  @media screen and (max-width: $tablet) {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+  @media screen and (max-width: $phone) {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+.gallery {
+  width: auto;
+  height: auto;
+  display: flex;
+  text-align: center;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  -webkit-tap-highlight-color: transparent;
+  margin-right: 70px;
+  margin-left: 70px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  @media screen and (max-width: $tablet) {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  @media screen and (max-width: $phone) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .post {
+    display: none;
+    position: absolute;
+    &.active {
+      display: inline-block;
+    }
+    .wide {
+      @media screen and (max-width: $tablet) {
+        width: 80vw;
+        height: auto;
+      }
+      @media screen and (max-width: $phone) {
+        width: 80vw;
+        height: auto;
+        padding-bottom: 20px;
+      }
+    }
+    img {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      width: auto;
+      height: 70vh;
+      padding-bottom: 40px;
+      @media screen and (max-width: $phone) {
+        width: 80vw;
+        height: auto;
+        padding-bottom: 20px;
+      }
+    }
+    iframe {
+      height: 70vh;
+      width: 124vh;
+      padding-bottom: 40px;
+      @media screen and (max-width: $desktop) {
+        width: 70vw;
+        height: 39vw;
+      }
+      @media screen and (max-width: $phone) {
+        width: 80vw;
+        height: 45vw;
+      }
+    }
+  }
+  .description {
+    font-style: italic;
+    font-size: 1.25em;
+    text-align: center;
+    @media screen and (max-width: $phone) {
+      font-size: 0.9em;
+    }
+  }
+}
+
+// ABOUT PAGE
+.bio {
+  padding-left: 80px;
+  padding-top: 40px;
+  position: absolute;
+  font-variant-numeric: lining-nums;
+  @media screen and (max-width: $tablet) {
+    font-size: 0.75em;
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  @media screen and (max-width: $phone) {
+    position: relative;
+    text-align: center;
+    font-size: 0.65em;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+  }
+  p {
+    margin-bottom: 40px;
+  }
+  a {
+    font-size: 1em;
+    &:hover {
+      font-style: italic;
+      cursor: pointer;
+      opacity: 0.2;
+    }
+  }
+  .backbutton {
+    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.2;
+    }
+  }
+}
+.me {
+  width: 713px;
+  height: 475px;
+  position: absolute;
+  bottom: 16vh;
+  right: 8vh;
+  @media screen and (max-width: $desktop) {
+    width: 432px;
+    height: 288px;
+  }
+  @media screen and (max-width: $phone) {
+    width: 70%;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+  }
+}
+
+// LINK FIX
+.links {
+  @media screen and (max-width: $phone) {
+    display: none;
+  }
+  @media screen and (max-width: $tablet) {
+    position: inherit;
+    left: inherit;
+  }
+  li {
+    position: absolute;
+  }
+  li:nth-of-type(1) {
+    right: 373px;
+    @media screen and (max-width: $tablet) {
+      right: 260px;
+    }
+  }
+  li:nth-of-type(2) {
+    right: 211px;
+    @media screen and (max-width: $tablet) {
+      right: 153px;
+    }
+    &:hover {
+      right: 213px;
+      @media screen and (max-width: $tablet) {
+        right: 155px;
+      }
+    }
+  }
+  li:nth-of-type(3) {
+    right: 80px;
+    @media screen and (max-width: $tablet) {
+      right: 70px;
+    }
+  }
+}
+.bio {
+  p {
+    a {
+      position: absolute;
+    }
+    a:nth-of-type(1) {
+      left: 80px;
+      @media screen and (max-width: $tablet) {
+        left: 70px;
+      }
+      @media screen and (max-width: $phone) {
+        position: inherit;
+        left: inherit;
+      }
+    }
+    a:nth-of-type(2) {
+      left: 173px;
+      @media screen and (max-width: $tablet) {
+        left: 140px;
+      }
+      @media screen and (max-width: $phone) {
+        position: inherit;
+        left: inherit;
+      }
+      &:hover {
+        left: 175px;
+        @media screen and (max-width: $tablet) {
+          left: 142px;
+        }
+        @media screen and (max-width: $phone) {
+          left: inherit;
+        }
+      }
+    }
+    a:nth-of-type(3) {
+      left: 285px;
+      @media screen and (max-width: $tablet) {
+        left: 224px;
+      }
+      @media screen and (max-width: $phone) {
+        position: inherit;
+        left: inherit;
+      }
+    }
+  }
+}
